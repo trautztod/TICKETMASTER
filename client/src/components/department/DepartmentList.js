@@ -28,21 +28,22 @@ export const DepartmentList = (props) => {
     props.dispatch(startAddDepartment({ name: dept }, redirect));
   };
 
-  const handleRemove = (id) => {
+ const handleRemove = (id) => {
     swal({
-      title: "Confirm Deletion",
+      title: "Admin only Operation",
       icon: "warning",
       buttons: true,
       dangerMode: true,
-    }).then((willDelete) => {
+    })/* .then((willDelete) => {
       if (willDelete) {
         swal("Successfully Deleted", {
           icon: "success",
         });
-        props.dispatch(startRemoveDepartment(id));
+        props.dispatch(startRemoveEmployee(id));
       }
-    });
+    }); */
   };
+
 
   return (
     <>
