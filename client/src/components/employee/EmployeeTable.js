@@ -40,22 +40,23 @@ const EmployeeTable = (props) => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-  const handleRemove = (id) => {
+  
+ const handleRemove = (id) => {
     swal({
-      title: "Confirm Deletion",
+      title: "Admin only Operation",
       icon: "warning",
       buttons: true,
       dangerMode: true,
-    }).then((willDelete) => {
+    })/* .then((willDelete) => {
       if (willDelete) {
         swal("Successfully Deleted", {
           icon: "success",
         });
         props.dispatch(startRemoveEmployee(id));
       }
-    });
+    }); */
   };
+
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
